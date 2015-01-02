@@ -1,0 +1,57 @@
+﻿<%@ Master Language="VB" CodeFile="library.master.vb" Inherits="library" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <link rel="stylesheet" type="text/css" href="~/css/stylesheet.css" />
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="container">
+
+        <div id="header">
+            <h1>South Liberty Public Library</h1>
+            <h3>SLPL Website</h3>
+        </div>
+
+        <div id="currentTime">
+            <asp:Label ID ="currentTimeLabel" runat="server" CssClass="currentTime"></asp:Label>
+        </div>       
+
+        <div id="menu">
+            <ul id="nav">
+                <li><asp:HyperLink ID="link_Home" runat="server" NavigateUrl="~/PAGELINK">Home</asp:HyperLink></li>
+                <li><asp:HyperLink ID="link_Materials" runat="server" NavigateUrl="~/PAGELINK">Materials</asp:HyperLink></li>
+                <li><asp:HyperLink ID="link_Librarian" runat="server" NavigateUrl="~/PAGELINK">Librarian</asp:HyperLink></li>
+                <li><asp:LoginStatus ID="LoginStatus1" runat="server"></asp:LoginStatus></li>
+            </ul>
+
+            <asp:TextBox ID="searchTB" runat="server"></asp:TextBox>
+
+        &nbsp;&nbsp;&nbsp;
+            <asp:Button ID="searchBtn" runat="server" Text="Search" />
+
+        </div>
+
+        <div id ="main">
+
+        
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+            </div>
+
+        <div id="footer">
+            &copy; 2014 South Liberty Public Library
+        </div>
+
+    </div>
+    </form>
+</body>
+</html>
